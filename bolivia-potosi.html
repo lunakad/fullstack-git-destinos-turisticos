@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre Potosí, Bolivia: el Cerro Rico, la Casa de la Moneda, paisajes andinos y patrimonio histórico.">
+  <title>Potosí, Bolivia | Historia que toca el cielo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cobre: '#B96843',
+            noche: '#17212B',
+            arena: '#F5F0E8',
+            dorado: '#D9A441'
+          },
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-overlay { background: linear-gradient(90deg, rgba(12,20,27,.82) 0%, rgba(12,20,27,.45) 55%, rgba(12,20,27,.08) 100%); }
+    .image-card img { transition: transform .6s ease; }
+    .image-card:hover img { transform: scale(1.06); }
+  </style>
+</head>
+<body class="bg-arena text-noche antialiased">
+  <!-- Navegación -->
+  <header class="absolute inset-x-0 top-0 z-20 text-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Navegación principal">
+      <a href="#" class="flex items-center gap-3" aria-label="Potosí, inicio">
+        <span class="grid h-11 w-11 place-items-center rounded-full border border-white/60 font-display text-xl">P</span>
+        <span>
+          <span class="block text-lg font-semibold tracking-wide">POTOSÍ</span>
+          <span class="block text-[10px] uppercase tracking-[.28em] text-white/75">Bolivia · Andes</span>
+        </span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+        <a class="hover:text-dorado" href="#destinos">Destinos</a>
+        <a class="hover:text-dorado" href="#historia">Historia</a>
+        <a class="hover:text-dorado" href="#experiencias">Experiencias</a>
+        <a class="rounded-full border border-white/70 px-5 py-2.5 transition hover:bg-white hover:text-noche" href="#planifica">Planifica tu visita</a>
+      </div>
+      <button id="menuBtn" class="rounded-lg border border-white/50 px-3 py-2 text-sm md:hidden" aria-expanded="false" aria-controls="mobileMenu">Menú</button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/20 bg-noche/95 px-6 py-4 md:hidden">
+      <a class="block py-2" href="#destinos">Destinos</a>
+      <a class="block py-2" href="#historia">Historia</a>
+      <a class="block py-2" href="#experiencias">Experiencias</a>
+      <a class="block py-2" href="#planifica">Planifica tu visita</a>
+    </div>
+  </header>
+
+  <!-- Portada -->
+  <main>
+    <section class="relative flex min-h-[88vh] items-center bg-noche">
+      <img
+        class="absolute inset-0 h-full w-full object-cover"
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=85"
+        alt="Cordillera andina con montañas imponentes"
+        fetchpriority="high">
+      <div class="hero-overlay absolute inset-0"></div>
+      <div class="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="mb-5 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[.28em] text-amber-200">
+            <span class="h-px w-10 bg-amber-200"></span> Patrimonio · Cultura · Aventura
+          </p>
+          <h1 class="font-display text-5xl leading-[1.05] text-white sm:text-6xl lg:text-8xl">Potosí,<br><em class="font-normal text-amber-200">historia que</em><br>toca el cielo.</h1>
+          <p class="mt-7 max-w-xl text-base leading-7 text-white/85 sm:text-lg">
+            Entre montañas majestuosas y calles llenas de memoria, descubre una ciudad donde el pasado sigue vivo y cada rincón cuenta una historia.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#destinos" class="rounded-full bg-dorado px-7 py-3.5 text-sm font-bold text-noche shadow-lg transition hover:bg-amber-300">Explorar destinos <span aria-hidden="true">↗</span></a>
+            <a href="#historia" class="rounded-full border border-white/60 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">Conocer su historia</a>
+          </div>
+        </div>
+        <div class="mt-16 flex flex-wrap gap-x-10 gap-y-4 border-t border-white/30 pt-5 text-sm text-white/80">
+          <span><strong class="text-white">4.000 m</strong> aprox. sobre el nivel del mar</span>
+          <span><strong class="text-white">Patrimonio</strong> histórico y cultural</span>
+          <span><strong class="text-white">Andes</strong> de Bolivia</span>
+        </div>
+      </div>
+      <div class="absolute bottom-8 right-8 hidden items-center gap-3 text-xs uppercase tracking-[.2em] text-white/70 lg:flex">
+        <span class="h-px w-12 bg-white/60"></span> Desliza para descubrir
+      </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="historia" class="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-28">
+      <div>
+        <p class="mb-4 text-xs font-bold uppercase tracking-[.25em] text-cobre">Una ciudad extraordinaria</p>
+        <h2 class="max-w-xl font-display text-4xl leading-tight sm:text-5xl">Donde la historia se encuentra con los Andes.</h2>
+        <p class="mt-6 max-w-xl leading-7 text-slate-600">
+          Potosí es uno de los destinos históricos más emblemáticos de Bolivia. Su arquitectura colonial, sus tradiciones y la presencia imponente del Cerro Rico revelan una herencia que marcó la historia de la región y del mundo.
+        </p>
+        <p class="mt-4 max-w-xl leading-7 text-slate-600">
+          Caminar por sus calles es descubrir templos, plazas, museos y sabores locales en una ciudad de altura, carácter y memoria.
+        </p>
+        <a href="#destinos" class="mt-7 inline-flex items-center gap-3 border-b-2 border-cobre pb-2 text-sm font-bold hover:text-cobre">Descubrir los lugares imprescindibles <span>→</span></a>
+      </div>
+      <div class="relative">
+        <img class="h-[420px] w-full rounded-sm object-cover shadow-xl" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85" alt="Montañas de los Andes bajo un cielo despejado" loading="lazy">
+        <div class="absolute -bottom-5 -left-3 max-w-xs bg-white p-5 shadow-lg sm:-left-6">
+          <p class="font-display text-2xl">Una herencia viva</p>
+          <p class="mt-1 text-sm text-slate-500">Arquitectura, cultura y paisajes de altura.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinos -->
+    <section id="destinos" class="bg-white py-20 lg:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p class="mb-3 text-xs font-bold uppercase tracking-[.25em] text-cobre">Lugares para descubrir</p>
+            <h2 class="font-display text-4xl sm:text-5xl">Imperdibles de Potosí</h2>
+          </div>
+          <p class="max-w-md text-sm leading-6 text-slate-500">Una selección para empezar a explorar el patrimonio, la historia y el paisaje potosino.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="image-card group overflow-hidden bg-arena">
+            <div class="relative h-64 overflow-hidden">
+              <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="Paisaje montañoso que evoca la presencia del Cerro Rico" loading="lazy">
+              <span class="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.18em]">Símbolo de la ciudad</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-cobre">01 · Naturaleza e historia</p>
+              <h3 class="mt-2 font-display text-2xl">Cerro Rico</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">La montaña que define el horizonte potosino y ocupa un lugar central en la historia minera de la región.</p>
+            </div>
+          </article>
+          <article class="image-card group overflow-hidden bg-arena">
+            <div class="relative h-64 overflow-hidden">
+              <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1566127992631-137a642a90f4?auto=format&fit=crop&w=900&q=80" alt="Edificio histórico de arquitectura clásica" loading="lazy">
+              <span class="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.18em]">Patrimonio cultural</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-cobre">02 · Museos</p>
+              <h3 class="mt-2 font-display text-2xl">Casa Nacional de Moneda</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Un espacio fundamental para conocer la historia de la acuñación de moneda y el pasado colonial de Potosí.</p>
+            </div>
+          </article>
+          <article class="image-card group overflow-hidden bg-arena">
+            <div class="relative h-64 overflow-hidden">
+              <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Fachada de arquitectura histórica con detalles ornamentales" loading="lazy">
+              <span class="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.18em]">Centro histórico</span>
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-bold uppercase tracking-widest text-cobre">03 · Arquitectura</p>
+              <h3 class="mt-2 font-display text-2xl">Calles y templos coloniales</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">Plazas, iglesias y fachadas que conservan la identidad arquitectónica y cultural de la ciudad.</p>
+            </div>
+          </article>
+        </div>
+        <p class="mt-6 text-xs leading-5 text-slate-400">Nota: las fotografías son ilustrativas y pueden no representar exactamente cada sitio mencionado.</p>
+      </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section id="experiencias" class="bg-noche py-20 text-white lg:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[.25em] text-amber-200">Vívelo a tu manera</p>
+          <h2 class="font-display text-4xl sm:text-5xl">Más que un destino, una experiencia.</h2>
+        </div>
+        <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="border-t border-white/25 pt-5">
+            <span class="text-2xl text-amber-200">01</span>
+            <h3 class="mt-4 font-display text-xl">Recorrer la historia</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">Visita museos, templos y espacios patrimoniales con guías locales.</p>
+          </div>
+          <div class="border-t border-white/25 pt-5">
+            <span class="text-2xl text-amber-200">02</span>
+            <h3 class="mt-4 font-display text-xl">Mirar los Andes</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">Disfruta los contrastes de la arquitectura urbana y el paisaje de altura.</p>
+          </div>
+          <div class="border-t border-white/25 pt-5">
+            <span class="text-2xl text-amber-200">03</span>
+            <h3 class="mt-4 font-display text-xl">Conocer las tradiciones</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">Acércate a las expresiones culturales, celebraciones y artesanías locales.</p>
+          </div>
+          <div class="border-t border-white/25 pt-5">
+            <span class="text-2xl text-amber-200">04</span>
+            <h3 class="mt-4 font-display text-xl">Probar la cocina local</h3>
+            <p class="mt-2 text-sm leading-6 text-white/65">Descubre sabores regionales en mercados y restaurantes de la ciudad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planifica -->
+    <section id="planifica" class="relative overflow-hidden bg-cobre">
+      <div class="absolute inset-0 opacity-20">
+        <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=75" alt="" loading="lazy">
+      </div>
+      <div class="relative mx-auto flex max-w-7xl flex-col gap-8 px-5 py-16 text-white md:flex-row md:items-center md:justify-between lg:px-8 lg:py-20">
+        <div class="max-w-2xl">
+          <p class="mb-3 text-xs font-bold uppercase tracking-[.25em]">Tu próxima aventura comienza aquí</p>
+          <h2 class="font-display text-4xl leading-tight sm:text-5xl">Prepárate para descubrir Potosí.</h2>
+          <p class="mt-4 max-w-xl leading-7 text-white/85">Por su altitud, lleva ropa abrigada, hidrátate y organiza tus visitas con anticipación. Consulta horarios, condiciones de acceso y servicios turísticos locales antes de viajar.</p>
+        </div>
+        <a href="https://www.bolivia.travel/" target="_blank" rel="noopener noreferrer" class="shrink-0 self-start rounded-full bg-white px-7 py-3.5 text-sm font-bold text-noche transition hover:bg-amber-100 md:self-center">Más información turística ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#101820] px-5 py-8 text-white/65">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between lg:px-3">
+      <div>
+        <p class="font-display text-xl text-white">POTOSÍ <span class="text-cobre">.</span></p>
+        <p class="mt-1 text-xs">Historia, cultura y paisajes de Bolivia.</p>
+      </div>
+      <p class="text-xs">© <span id="year"></span> · Página turística demostrativa</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
